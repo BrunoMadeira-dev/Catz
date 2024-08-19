@@ -25,7 +25,17 @@ struct CatzApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            TabView {
+                CatBreedsView()
+                    .tabItem {
+                        Label("Breeds", systemImage: "pawprint")
+                    }
+                FavouriteBreedsView()
+                    .tabItem {
+                        Label("Favourites", systemImage: "star.fill")
+                    }
+            }
+            //ContentView()
         }
         .modelContainer(sharedModelContainer)
     }

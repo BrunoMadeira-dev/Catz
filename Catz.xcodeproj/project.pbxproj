@@ -15,6 +15,9 @@
 		54C4B2112C6BBFC20029B742 /* CatzTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C4B2102C6BBFC20029B742 /* CatzTests.swift */; };
 		54C4B21B2C6BBFC20029B742 /* CatzUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C4B21A2C6BBFC20029B742 /* CatzUITests.swift */; };
 		54C4B21D2C6BBFC20029B742 /* CatzUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C4B21C2C6BBFC20029B742 /* CatzUITestsLaunchTests.swift */; };
+		54C4B2312C6BC6600029B742 /* CatBreedsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C4B2302C6BC6600029B742 /* CatBreedsView.swift */; };
+		54C4B2332C6BC6730029B742 /* FavouriteBreedsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C4B2322C6BC6730029B742 /* FavouriteBreedsView.swift */; };
+		54C4B2352C6CB1A20029B742 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C4B2342C6CB1A20029B742 /* NetworkManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +49,9 @@
 		54C4B2162C6BBFC20029B742 /* CatzUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CatzUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		54C4B21A2C6BBFC20029B742 /* CatzUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatzUITests.swift; sourceTree = "<group>"; };
 		54C4B21C2C6BBFC20029B742 /* CatzUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatzUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		54C4B2302C6BC6600029B742 /* CatBreedsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatBreedsView.swift; sourceTree = "<group>"; };
+		54C4B2322C6BC6730029B742 /* FavouriteBreedsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteBreedsView.swift; sourceTree = "<group>"; };
+		54C4B2342C6CB1A20029B742 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +102,11 @@
 		54C4B1FC2C6BBFC10029B742 /* Catz */ = {
 			isa = PBXGroup;
 			children = (
+				54C4B22F2C6BC6140029B742 /* Models */,
+				54C4B22E2C6BC60C0029B742 /* Networking */,
+				54C4B22D2C6BC6020029B742 /* Views */,
+				54C4B22C2C6BC5FB0029B742 /* ViewModels */,
+				54C4B22B2C6BC5EB0029B742 /* Resources */,
 				54C4B1FD2C6BBFC10029B742 /* CatzApp.swift */,
 				54C4B1FF2C6BBFC10029B742 /* ContentView.swift */,
 				54C4B2012C6BBFC10029B742 /* Item.swift */,
@@ -128,6 +139,44 @@
 				54C4B21C2C6BBFC20029B742 /* CatzUITestsLaunchTests.swift */,
 			);
 			path = CatzUITests;
+			sourceTree = "<group>";
+		};
+		54C4B22B2C6BC5EB0029B742 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		54C4B22C2C6BC5FB0029B742 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		54C4B22D2C6BC6020029B742 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				54C4B2302C6BC6600029B742 /* CatBreedsView.swift */,
+				54C4B2322C6BC6730029B742 /* FavouriteBreedsView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		54C4B22E2C6BC60C0029B742 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				54C4B2342C6CB1A20029B742 /* NetworkManager.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		54C4B22F2C6BC6140029B742 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -260,9 +309,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				54C4B2352C6CB1A20029B742 /* NetworkManager.swift in Sources */,
 				54C4B2002C6BBFC10029B742 /* ContentView.swift in Sources */,
 				54C4B2022C6BBFC10029B742 /* Item.swift in Sources */,
+				54C4B2312C6BC6600029B742 /* CatBreedsView.swift in Sources */,
 				54C4B1FE2C6BBFC10029B742 /* CatzApp.swift in Sources */,
+				54C4B2332C6BC6730029B742 /* FavouriteBreedsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
