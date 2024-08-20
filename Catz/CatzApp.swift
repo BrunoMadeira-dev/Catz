@@ -13,6 +13,7 @@ struct CatzApp: App {
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
             CatBreed.self,
+            FavoriteCat.self,
         ])
         let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
 
@@ -35,7 +36,6 @@ struct CatzApp: App {
                         Label("Favourites", systemImage: "star.fill")
                     }
             }
-            //ContentView()
         }
         .modelContainer(sharedModelContainer)
     }

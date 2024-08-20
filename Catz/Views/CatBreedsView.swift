@@ -19,33 +19,29 @@ struct CatBreedsView: View {
     
     var body: some View {
         NavigationStack {
-            
-            ZStack {
-                    ScrollView {
-                        LazyVGrid(columns: viewModel.columns) {
-                            ForEach(viewModelCalls.filteredBreeds) { breeds in
-                                FrameworkCatzView(title: breeds.name, image: breeds.imageURL)
-                                    .onTapGesture {
-                                        viewModelCalls.selectedFramework = breeds
-                                        self.selectedBreed = breeds
-                                        print(breeds.name)
-                                        
-                                        
-                                    }
+            ScrollView {
+                LazyVGrid(columns: viewModel.columns) {
+                    ForEach(viewModelCalls.filteredBreeds) { breeds in
+                        FrameworkCatzView(title: breeds.name, image: breeds.imageURL, breeds: breeds)
+                            .onTapGesture {
+                                viewModelCalls.selectedFramework = breeds
+                                self.selectedBreed = breeds
+                                print(breeds.idCat)
+
                             }
-                        }
                     }
-                    .navigationTitle("Cats")
-                    .searchable(text: $seacrhBar, placement: .automatic, prompt: "Search Cats")
-                    .onAppear(
-                        perform: viewModelCalls.fetchBreeds
-                    )
-                    .onChange(of: seacrhBar) { _, newValue in
-                        viewModelCalls.searchBreeds(with: newValue)
-                    }
-                    .sheet(isPresented: $viewModelCalls.isShowingDetailView) {
-                        CatzDetailsView(isShowingDetailedView: $viewModelCalls.isShowingDetailView, breeds: selectedBreed!)
-                    }
+                }
+            }
+            .navigationTitle("Cats")
+            .searchable(text: $seacrhBar, placement: .automatic, prompt: "Search Cats")
+            .onAppear(
+                perform: viewModelCalls.fetchBreeds
+            )
+            .onChange(of: seacrhBar) { _, newValue in
+                viewModelCalls.searchBreeds(with: newValue)
+            }
+            .sheet(isPresented: $viewModelCalls.isShowingDetailView) {
+                CatzDetailsView(isShowingDetailedView: $viewModelCalls.isShowingDetailView, breeds: selectedBreed!)
             }
         }
     }

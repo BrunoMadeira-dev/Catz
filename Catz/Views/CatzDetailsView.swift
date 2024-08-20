@@ -12,24 +12,41 @@ struct CatzDetailsView: View {
     @Binding var isShowingDetailedView: Bool
     var breeds: CatBreed
     
+    @Environment(\.modelContext) private var viewContext
+    
     var body: some View {
         VStack {
             CatzDismissButton(isShowingDetailedView: $isShowingDetailedView)
             Spacer()
-            FrameworkCatzView(title: breeds.name, image: breeds.imageURL)
+            FrameworkCatzView(title: breeds.name, image: breeds.imageURL, breeds: breeds)
             Text(breeds.catDescription)
                 .font(.body)
                 .padding()
             Spacer()
             
             Button(action: {
-                
+                saveFavorite()
             }, label: {
                 CatzFavBtn(title: "Favorite")
                 
             })
             
             
+        }
+    }
+    
+    private func saveFavorite() {
+        let newFavorite = FavoriteCat(name: breeds.name, imageUrl: breeds.imageURL, catDescription: breeds.catDescription)
+        
+        viewContext.insert(newFavorite)
+        
+        do {
+            if viewContext.hasChanges {
+                try viewContext.save()
+                print("Saved to favorites")
+            }
+        } catch {
+            print("Failed to save favorite: \(error.localizedDescription)")
         }
     }
 }

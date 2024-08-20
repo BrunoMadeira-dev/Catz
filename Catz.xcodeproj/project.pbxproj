@@ -11,6 +11,8 @@
 		5463EC3F2C74E72F0043C6D4 /* CatzDismissButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5463EC3E2C74E72E0043C6D4 /* CatzDismissButton.swift */; };
 		5463EC412C74E9DA0043C6D4 /* CatzDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5463EC402C74E9DA0043C6D4 /* CatzDetailsView.swift */; };
 		5463EC432C74EBB40043C6D4 /* CatzFavBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5463EC422C74EBB40043C6D4 /* CatzFavBtn.swift */; };
+		5463EC452C752EAD0043C6D4 /* FavoriteCat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5463EC442C752EAD0043C6D4 /* FavoriteCat.swift */; };
+		5463EC472C7539B60043C6D4 /* FavoritesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5463EC462C7539B60043C6D4 /* FavoritesViewModel.swift */; };
 		54C4B1FE2C6BBFC10029B742 /* CatzApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C4B1FD2C6BBFC10029B742 /* CatzApp.swift */; };
 		54C4B2002C6BBFC10029B742 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C4B1FF2C6BBFC10029B742 /* ContentView.swift */; };
 		54C4B2022C6BBFC10029B742 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C4B2012C6BBFC10029B742 /* Item.swift */; };
@@ -52,6 +54,8 @@
 		5463EC3E2C74E72E0043C6D4 /* CatzDismissButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatzDismissButton.swift; sourceTree = "<group>"; };
 		5463EC402C74E9DA0043C6D4 /* CatzDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatzDetailsView.swift; sourceTree = "<group>"; };
 		5463EC422C74EBB40043C6D4 /* CatzFavBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatzFavBtn.swift; sourceTree = "<group>"; };
+		5463EC442C752EAD0043C6D4 /* FavoriteCat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCat.swift; sourceTree = "<group>"; };
+		5463EC462C7539B60043C6D4 /* FavoritesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewModel.swift; sourceTree = "<group>"; };
 		54C4B1FA2C6BBFC10029B742 /* Catz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Catz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		54C4B1FD2C6BBFC10029B742 /* CatzApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatzApp.swift; sourceTree = "<group>"; };
 		54C4B1FF2C6BBFC10029B742 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -184,6 +188,7 @@
 				54C4B2362C7380820029B742 /* FrameworkGridViewModel.swift */,
 				54C4B2382C7380B60029B742 /* CatzFramework.swift */,
 				54C4B23D2C7386490029B742 /* CatzBreedsViewModel.swift */,
+				5463EC462C7539B60043C6D4 /* FavoritesViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -213,6 +218,7 @@
 				54C4B23F2C7387000029B742 /* CatBreeds.swift */,
 				54C4B2412C7387D00029B742 /* CatBreedDTO.swift */,
 				5463EC3B2C748E550043C6D4 /* CatImageSearchDTO.swift */,
+				5463EC442C752EAD0043C6D4 /* FavoriteCat.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -359,8 +365,10 @@
 				5463EC3F2C74E72F0043C6D4 /* CatzDismissButton.swift in Sources */,
 				54C4B23E2C7386490029B742 /* CatzBreedsViewModel.swift in Sources */,
 				54C4B2372C7380820029B742 /* FrameworkGridViewModel.swift in Sources */,
+				5463EC472C7539B60043C6D4 /* FavoritesViewModel.swift in Sources */,
 				54C4B2392C7380B60029B742 /* CatzFramework.swift in Sources */,
 				54C4B2402C7387000029B742 /* CatBreeds.swift in Sources */,
+				5463EC452C752EAD0043C6D4 /* FavoriteCat.swift in Sources */,
 				5463EC432C74EBB40043C6D4 /* CatzFavBtn.swift in Sources */,
 				54C4B2332C6BC6730029B742 /* FavouriteBreedsView.swift in Sources */,
 			);

@@ -6,11 +6,18 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct FrameworkCatzView: View {
     
     @State var title: String
     @State var image: String?
+    @State var id: String?
+    
+    var breeds: CatBreed
+    
+    @Query private var favoriteCats: [FavoriteCat]
+    @State private var favoriteIDs: Set<String> = []
     
     var body: some View {
         VStack(spacing: 20) {
@@ -38,14 +45,23 @@ struct FrameworkCatzView: View {
                     .scaledToFit()
                     .layoutPriority(1)
                     .minimumScaleFactor(0.6)
-                Image(systemName: "star.fill")
+                
+                Image(systemName: favoriteIDs.contains(breeds.name) ? "star.fill" : "star")
+                    .foregroundColor(.yellow)
                     .padding(.top, 5)
             }
         }
         .padding()
+        .onAppear {
+            updateFavoriteIDs()
+        }
+    }
+    
+    private func updateFavoriteIDs() {
+        favoriteIDs = Set(favoriteCats.map { $0.name })
     }
 }
 
 #Preview {
-    FrameworkCatzView(title: "teste grande de nome", image: "cat.fill")
+    FrameworkCatzView(title: "teste grande de nome", image: "cat.fill", breeds: CatBreed(id: "teste", name: "teste", imageURL: "cat.fill", origin: "teste", temperament: "teste", catDescription: "Cat that lives a long long life", lifespanRange: "10-15"))
 }
