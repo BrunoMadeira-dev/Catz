@@ -9,7 +9,7 @@ import Foundation
 import SwiftData
 
 @Model
-class CatBreed: Identifiable {
+class CatBreed: Hashable, Identifiable {
     var idCat: UUID
     var id: String
     var name: String

@@ -11,12 +11,10 @@ struct FrameworkCatzView: View {
     
     @State var title: String
     @State var image: String?
-    var imageURL: String?
-    //let framework: Framework
     
     var body: some View {
         VStack(spacing: 20) {
-            if let imageURL = image, let url = URL(string: image ?? "") {
+            if let _ = image, let url = URL(string: image ?? "") {
                 AsyncImage(url: url) { image in
                     image
                         .resizable()
@@ -25,24 +23,29 @@ struct FrameworkCatzView: View {
                 } placeholder: {
                     ProgressView()
                 }
-            } else if let image = image {
+            } else if let _ = image {
                 Image(systemName: "cat.fill")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(maxWidth: 100, maxHeight: 100)
             }
-            HStack {
+            VStack {
                 Text(title)
-                    .font(.title2)
+                    .font(.subheadline)
                     .fontWeight(.semibold)
+                    .lineLimit(nil)
+                    .fixedSize(horizontal: false, vertical: true)
                     .scaledToFit()
+                    .layoutPriority(1)
                     .minimumScaleFactor(0.6)
                 Image(systemName: "star.fill")
+                    .padding(.top, 5)
             }
         }
+        .padding()
     }
 }
 
 #Preview {
-    FrameworkCatzView(title: "teste", image: "cat.fill")
+    FrameworkCatzView(title: "teste grande de nome", image: "cat.fill")
 }

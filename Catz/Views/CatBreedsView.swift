@@ -15,21 +15,22 @@ struct CatBreedsView: View {
     @StateObject var viewModelCalls = CatzBreedsViewModel()
     @State private var isLoading: Bool = true
     
+    @State private var selectedBreed: CatBreed? = nil
+    
     var body: some View {
         NavigationStack {
             
             ZStack {
-//                if viewModelCalls.isLoading {
-//                    ProgressView("Loading Cats...")
-//                        .progressViewStyle(CircularProgressViewStyle())
-//                        .scaleEffect(2.0)  // Aumenta o tamanho do ProgressView
-//                } else {
                     ScrollView {
                         LazyVGrid(columns: viewModel.columns) {
                             ForEach(viewModelCalls.filteredBreeds) { breeds in
                                 FrameworkCatzView(title: breeds.name, image: breeds.imageURL)
                                     .onTapGesture {
-                                        viewModel.selectedFramework = breeds
+                                        viewModelCalls.selectedFramework = breeds
+                                        self.selectedBreed = breeds
+                                        print(breeds.name)
+                                        
+                                        
                                     }
                             }
                         }
@@ -42,7 +43,9 @@ struct CatBreedsView: View {
                     .onChange(of: seacrhBar) { _, newValue in
                         viewModelCalls.searchBreeds(with: newValue)
                     }
-                //}
+                    .sheet(isPresented: $viewModelCalls.isShowingDetailView) {
+                        CatzDetailsView(isShowingDetailedView: $viewModelCalls.isShowingDetailView, breeds: selectedBreed!)
+                    }
             }
         }
     }

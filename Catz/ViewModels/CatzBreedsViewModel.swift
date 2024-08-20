@@ -14,6 +14,11 @@ class CatzBreedsViewModel: ObservableObject {
     @Published var breeds: [CatBreed] = []
     @Published var filteredBreeds: [CatBreed] = []
     
+    var selectedFramework: CatBreed? {
+        didSet { isShowingDetailView = true }
+    }
+    @Published var isShowingDetailView = false
+    
     let url =  "https://api.thecatapi.com/v1/breeds"
     
     private var cancellables = Set<AnyCancellable>()
