@@ -52,7 +52,11 @@ struct FrameworkCatzView: View {
             }
         }
         .padding()
+        .cornerRadius(12)
         .onAppear {
+            updateFavoriteIDs()
+        }
+        .onChange(of: favoriteCats) { _, _ in
             updateFavoriteIDs()
         }
     }

@@ -14,11 +14,17 @@ class FavoriteCat: Identifiable {
     var name: String
     var imageUrl: String
     var catDescription: String
+    var lifeSpan: String
+    var origin: String
+    var temperament: String
     
-    init(name: String, imageUrl: String, catDescription: String) {
-            self.id = UUID()
-            self.name = name
-            self.imageUrl = imageUrl
-            self.catDescription = catDescription
-        }
+    init(name: String, imageUrl: String, catDescription: String, lifeSpan: String, origin: String, temperament: String) {
+        self.id = UUID()
+        self.name = name
+        self.imageUrl = imageUrl
+        self.catDescription = catDescription
+        self.lifeSpan = lifeSpan
+        self.origin = origin
+        self.temperament = temperament
+    }
 }

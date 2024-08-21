@@ -26,9 +26,6 @@ class CatzBreedsViewModel: ObservableObject {
     private var imageCache = [String: String]()
     @Published var isLoading: Bool = false
     
-//    init() {
-//        fetchBreeds()
-//    }
     
     func fetchBreeds() {
         guard !isLoading else { return }

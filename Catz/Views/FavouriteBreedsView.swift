@@ -59,7 +59,6 @@ struct FavouriteBreedsView: View {
                                 
                             }
                             .padding()
-                            .background(Color(UIColor.secondarySystemBackground))
                             .cornerRadius(12)
                         }
                     }
